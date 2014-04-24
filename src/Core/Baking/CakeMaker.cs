@@ -19,22 +19,24 @@ namespace Core.Baking
 		{
 			Console.WriteLine("Starting work on a {0}", dto.Name);
 
-			_mixer.Mix(dto.Ingredients);
-
 			var cake = new Cake
 			{
 				Name = dto.Name,
 				Ingredients = dto.Ingredients,
 				Slices = dto.Ingredients.Count * 3 - 1,
 			};
-			
-			_oven.PutInOven(cake);
-			_oven.Bake(350, 30);
-			_oven.TakeOutOfOven(cake);
 
-			cake.Decorate();
+			if (_mixer.Mix(dto.Ingredients))
+			{
+				_oven.PutInOven(cake);
+				_oven.Bake(350, 30);
+				_oven.TakeOutOfOven(cake);
 
-			Console.WriteLine("The {0} has been made", cake.Name);
+				if(cake.HasBeenBaked)
+					cake.Decorate();
+
+				Console.WriteLine("The {0} has been made", cake.Name);
+			}
 
 			return cake;
 		}

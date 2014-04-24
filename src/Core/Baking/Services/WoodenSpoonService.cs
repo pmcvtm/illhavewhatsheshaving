@@ -6,7 +6,7 @@ namespace Core.Baking.Services
 {
 	public class WoodenSpoonService : IMixerService
 	{
-		public void Mix(List<Ingredient> ingredients)
+		public bool Mix(List<Ingredient> ingredients)
 		{
 			var ingredientList = ingredients.Select(x => 
 			                                        string.Format("{0} {1}", x.Measure, x.Name))
@@ -15,6 +15,8 @@ namespace Core.Baking.Services
 			Console.WriteLine("Mixing {0} with a wooden spoon and some elbow grease."
 			                  , string.Join(", ", ingredientList)
 				);
+
+			return ingredients.Count < 10;
 		}
 	}
 }

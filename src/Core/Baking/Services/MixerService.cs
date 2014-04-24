@@ -4,6 +4,6 @@ namespace Core.Baking.Services
 {
 	public interface IMixerService
 	{
-		void Mix(List<Ingredient> ingredients);
+		bool Mix(List<Ingredient> ingredients);
 	}
 }
