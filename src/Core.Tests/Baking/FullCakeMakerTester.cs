@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Core.Baking;
+﻿using Core.Baking;
 using Core.Baking.Services;
 using NUnit.Framework;
 using Should;
@@ -7,7 +6,7 @@ using Should;
 namespace Core.Tests.Baking
 {
 	[TestFixture]
-    public class CakeMakerTester
+    public class FullCakeMakerTester
     {
 		[Test]
 		public void Should_bake_and_decorate_cake()
@@ -22,10 +21,4 @@ namespace Core.Tests.Baking
 			cake.HasBeenDecordated.ShouldBeTrue();
 		}
     }
-
-	public class TestCakeRecipe : ICakeDto
-	{
-		public string Name { get { return "Test Cake"; } }
-		public List<Ingredient> Ingredients { get {return new List<Ingredient>();} }
-	}
 }

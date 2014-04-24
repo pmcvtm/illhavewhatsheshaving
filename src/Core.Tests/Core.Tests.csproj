@@ -47,7 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Baking\CakeMakerTester.cs" />
+    <Compile Include="Baking\FakeOvenService.cs" />
+    <Compile Include="Baking\FullCakeMakerTester.cs" />
+    <Compile Include="Baking\StubbedCakeMakerTester.cs" />
+    <Compile Include="Baking\StubMixerService.cs" />
+    <Compile Include="Baking\TestCakeRecipe.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
