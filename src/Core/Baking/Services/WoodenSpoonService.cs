@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Core.Services
+namespace Core.Baking.Services
 {
 	public class WoodenSpoonService : IMixerService
 	{

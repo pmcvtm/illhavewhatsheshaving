@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Core.Cake
+namespace Core.Baking
 {
 	public class SimpleCakeRecipe : ICakeDto
 	{
@@ -21,7 +21,7 @@ namespace Core.Cake
 		}
 
 		public string Name { get; private set; }
-		
+
 		public List<Ingredient> Ingredients { get; private set; }
 	}
 }

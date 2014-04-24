@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using Core.Services;
+using Core.Baking.Services;
 
-namespace Core.Cake
+namespace Core.Baking
 {
 	public class CakeMaker
 	{
@@ -15,22 +15,34 @@ namespace Core.Cake
 			_mixer = mixer;
 		}
 
-		public void MakeACake(ICakeDto dto)
+		public Cake MakeACake(ICakeDto dto)
 		{
 			Console.WriteLine("Starting work on a {0}", dto.Name);
 
 			_mixer.Mix(dto.Ingredients);
-			
-			_oven.PutInOven(dto);
-			_oven.Bake(350, 30);
-			_oven.TakeOutOfOven(dto);
 
-			Console.WriteLine("The {0} has been made", dto.Name);
+			var cake = new Cake
+			{
+				Name = dto.Name,
+				Ingredients = dto.Ingredients,
+				Slices = dto.Ingredients.Count * 3 - 1,
+			};
+			
+			_oven.PutInOven(cake);
+			_oven.Bake(350, 30);
+			_oven.TakeOutOfOven(cake);
+
+			cake.Decorate();
+
+			Console.WriteLine("The {0} has been made", cake.Name);
+
+			return cake;
 		}
 	}
 
-	public interface ICakeDto : IBakeable
+	public interface ICakeDto
 	{
+		string Name { get; }
 		List<Ingredient> Ingredients { get; }
 	}
 }

@@ -1,5 +1,5 @@
-﻿using Core.Cake;
-using Core.Services;
+﻿using Core.Baking;
+using Core.Baking.Services;
 
 namespace Core
 {
@@ -7,11 +7,11 @@ namespace Core
 	{
 		public static void Main(string[] args)
 		{
-			var cakeMaker = new CakeMaker(new ElectricOvenService(), new WoodenSpoonService());
+			var cakeMaker = new Baking.CakeMaker(new ElectricOvenService(), new WoodenSpoonService());
 
 			var recipe = new SimpleCakeRecipe();
 
-			cakeMaker.MakeACake(recipe);
+			var cake = cakeMaker.MakeACake(recipe);
 		}
 	}
 }

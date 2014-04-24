@@ -1,11 +1,12 @@
 using System;
 using System.Collections.Generic;
 
-namespace Core.Services
+namespace Core.Baking.Services
 {
 	public interface IBakeable
 	{
 		string Name { get; }
+		bool HasBeenBaked { get; set; }
 	}
 
 	public abstract class OvenService

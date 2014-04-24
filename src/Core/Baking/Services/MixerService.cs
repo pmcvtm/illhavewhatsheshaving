@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Core.Services
+namespace Core.Baking.Services
 {
 	public interface IMixerService
 	{

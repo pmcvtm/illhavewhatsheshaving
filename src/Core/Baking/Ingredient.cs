@@ -1,4 +1,4 @@
-﻿namespace Core
+﻿namespace Core.Baking
 {
 	public class Ingredient
 	{

@@ -41,15 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cake\CakeMaker.cs" />
-    <Compile Include="Cake\SimpleCakeRecipe.cs" />
-    <Compile Include="Ingredient.cs" />
-    <Compile Include="Services\OvenService.cs" />
-    <Compile Include="Services\MixerService.cs" />
-    <Compile Include="Services\ElectricOvenService.cs" />
+    <Compile Include="Baking\CakeMaker.cs" />
+    <Compile Include="Baking\SimpleCakeRecipe.cs" />
+    <Compile Include="Baking\Cake.cs" />
+    <Compile Include="Baking\Ingredient.cs" />
+    <Compile Include="Baking\Services\OvenService.cs" />
+    <Compile Include="Baking\Services\MixerService.cs" />
+    <Compile Include="Baking\Services\ElectricOvenService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\WoodenSpoonService.cs" />
+    <Compile Include="Baking\Services\WoodenSpoonService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
