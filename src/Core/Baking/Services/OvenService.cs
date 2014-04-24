@@ -13,6 +13,11 @@ namespace Core.Baking.Services
 	{
 		protected List<IBakeable> ThingsInOven;
 
+		protected OvenService()
+		{
+			ThingsInOven = new List<IBakeable>();
+		}
+
 		public abstract void Bake(int temperature, int minutes);
 
 		public void PutInOven(IBakeable item)
